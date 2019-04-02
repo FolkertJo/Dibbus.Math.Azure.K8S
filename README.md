@@ -4,7 +4,7 @@ Scripted Docker image deployment in Azure Kubernets Services
 
 Add a settings.json file using this format with the correct settings:
 
-'''json
+```json
 {
    "resourceGroup": {
       "location": "westeurope",
