@@ -1,5 +1,5 @@
 # ignore settings file
 settings.json
 
-# ignore manifest files
-manifest/
+# ignore the manifest file
+kubernetes-manifest.yaml

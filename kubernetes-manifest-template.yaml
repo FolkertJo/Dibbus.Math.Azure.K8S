@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: configmap-[k8s-application-name]
+data:    
+    key_app_title: "Kubernetes"
+---    
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: deployment-[k8s-application-name]
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: app-[k8s-application-name]
+    spec:
+      containers:
+        - image: "[k8s-endpoint]/[docker-image]:[docker-tag]"
+          imagePullPolicy: Always
+          name: container-[k8s-application-name]
+          ports:
+          - containerPort: 80
+          env:
+          - name: AppTitle
+            valueFrom:
+              configMapKeyRef:
+                name:  configmap-[k8s-application-name]
+                key: key_app_title
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-[k8s-application-name]
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: app-[k8s-application-name]

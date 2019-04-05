@@ -11,8 +11,10 @@ $dockerTag = $json.docker.image.tag
 $azureKubernetesClusterName = $json.kubernetes.cluster.name
 $azureKubernetesVmSize = $json.kubernetes.cluster.size
 $azureKubernetesNodeCount = $json.kubernetes.cluster.nodes
+$azureKubernetesNamespace = $json.kubernetes.namespace
+$azureKubernetesAppName = $json.kubernetes.application.name
 
 # Container Registry
 $azureContainerRegisteryName = $json.containerregistry.name
-$azureContainerEndpointSuffix = $json.containerregistry.endpointSuffix
+$azureContainerEndpointSuffix = $json.containerregistry.suffix
 $azureContainerRegisteryEndpoint = "${azureContainerRegisteryName}.${azureContainerEndpointSuffix}".toLower()
