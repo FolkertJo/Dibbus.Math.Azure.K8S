@@ -36,4 +36,4 @@ Add a settings.json file using this format with the correct settings:
 
 The Kubernetes deployment requires additional manifest files which are responsible for designing the 'Desired State'.
 
-This repo contains a simple transform script to find/replace the values from the settings file. This scripts takes the [template file](kubernetes-manifest-template.yaml) file and injects the values from the settings.json.
+This repo contains a [simple transform script](kubernetes-manifest-transform.ps1) to find/replace the values from the settings file. This scripts takes the [template file](kubernetes-manifest-template.yaml) file and injects the values from the settings.json. The result is renamed to 'kubernetes-manifest.yaml' which is referenced in the [deployment script](kubernetes-apply-manifest.ps1).
