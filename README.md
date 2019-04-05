@@ -4,23 +4,29 @@ Scripted Docker image deployment in Azure Kubernets Services
 
 Add a settings.json file using this format with the correct settings:
 
+> settings.json
+
 ```json
 {
    "resourceGroup": {
       "location": "westeurope",
-      "name": ""
+      "name": "[name of the Azure resource group]"
    },
    "docker": {
-      "imageName": "",
-      "imageTag": "3.0.0"
+      "image": {
+         "name": "[name of the docker image]",
+         "tag": "[name of the docker tag]"
+      }
    },
    "kubernetes": {
-      "clusterName": "",
-      "vmSize": "Standard_B2s",
-      "nodeCount": "1"
+      "cluster": {
+         "name": "[name of the kubernetes cluster]",
+         "size": "Standard_B2s",
+         "nodes": 1
+      }
    },
    "containerregistry": {
-      "name":"",
-      "endpointSuffix":"azurecr.io"
+      "name":"[name of the container registry]",
+      "suffix":"azurecr.io"
    }
 }
