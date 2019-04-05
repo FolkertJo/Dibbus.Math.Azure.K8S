@@ -36,35 +36,4 @@ Add a settings.json file using this format with the correct settings:
 
 The Kubernetes deployment requires additional manifest files which are responsible for designing the 'Desired State'.
 
-To use a manifest file, create a file called 'kubernetes-apply-manifest.yaml'. Copy past this code in the file and use your own settings:
-
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: [app name]
-spec:
-  replicas: 1
-  template:
-    metadata:
-      labels:
-        app: [app name]
-    spec:
-      containers:
-        - image: "[Azure Container Registry name].azurecr.io/[Docker image name]:[Docker image Tag]"
-          imagePullPolicy: Always
-          name: [app name]
-          ports:
-          - containerPort: 80
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: [service name]
-spec:
-  type: LoadBalancer
-  ports:
-  - port: 80
-  selector:
-    app: [app name]
-```
+This repo contains a simple transform script to find/replace the values from the settings file. This scripts takes the [template file](kubernetes-manifest-template.yaml) file and injects the values from the settings.json.
