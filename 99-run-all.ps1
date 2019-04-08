@@ -2,6 +2,8 @@
 . "$PSScriptRoot\azure-create-resourcegroup.ps1"
 . "$PSScriptRoot\azure-create-kubernetes-cluster.ps1"
 . "$PSScriptRoot\azure-create-container-registry.ps1"
+
+# set permission to allow Kubernetes to pull images from the registry
 . "$PSScriptRoot\azure-set-permissions.ps1"
 
 # docker tagging and pushing

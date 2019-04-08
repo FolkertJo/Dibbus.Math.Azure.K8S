@@ -23,6 +23,10 @@ Add a settings.json file using this format with the correct settings:
          "name": "[name of the kubernetes cluster]",
          "size": "Standard_B2s",
          "nodes": 1
+      },
+      "namespace": "[preferred namespace]]",
+      "application": {
+         "name" :"[name of yout application]"
       }
    },
    "containerregistry": {

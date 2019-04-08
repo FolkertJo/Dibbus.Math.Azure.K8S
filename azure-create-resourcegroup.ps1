@@ -1,7 +1,7 @@
 . "$PSScriptRoot\0-variables.ps1"
 
 try {
-   Write-Host "Creating Resourcegroup: $azureResoureGroupName in $azureLocation" -ForegroundColor Green
+   Write-Host $date "Creating Resourcegroup: $azureResoureGroupName in $azureLocation" -ForegroundColor Green
 
    az group create `
       --name $azureResoureGroupName `

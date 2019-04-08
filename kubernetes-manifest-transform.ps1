@@ -1,5 +1,7 @@
 . "$PSScriptRoot\0-variables.ps1"
 
+Write-Host $date "Transforming manifest template" -ForegroundColor Green
+
 $file = "$PSScriptRoot\kubernetes-manifest-template.yaml"
 $fileTransformed = "$PSScriptRoot\kubernetes-manifest.yaml"
 

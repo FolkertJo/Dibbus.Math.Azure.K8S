@@ -18,3 +18,10 @@ $azureKubernetesAppName = $json.kubernetes.application.name
 $azureContainerRegisteryName = $json.containerregistry.name
 $azureContainerEndpointSuffix = $json.containerregistry.suffix
 $azureContainerRegisteryEndpoint = "${azureContainerRegisteryName}.${azureContainerEndpointSuffix}".toLower()
+
+$date = GetDateTime
+
+function GetDateTime(){
+   $date = "{0:f}" -f (get-date)
+   return "$date >"
+}
