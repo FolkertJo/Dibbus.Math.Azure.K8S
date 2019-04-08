@@ -3,9 +3,9 @@
 try {
    Write-Host "Creating Resourcegroup: $azureResoureGroupName in $azureLocation" -ForegroundColor Green
 
-   # az group create `
-   #    --name $azureResoureGroupName `
-   #    --location $azureLocation
+   az group create `
+      --name $azureResoureGroupName `
+      --location $azureLocation
 }
 catch {
    $ErrorMessage = $_.Exception.Message
