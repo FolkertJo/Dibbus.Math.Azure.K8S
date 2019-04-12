@@ -59,7 +59,7 @@ This repo contains a [simple transform script](kubernetes-manifest-transform.ps1
 
 ## Start
 
-You can run the [99-run-all.ps1](setup-run-all.ps1) script to start the setup.
+You can run the [setup-run-all.ps1](setup-run-all.ps1) script to start the setup.
 
 ## Duration of this installation
 
